@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Love</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        .container{
+            opacity: 0.8;
+        }
+        
+       .btn{
+           background-color: crimson;
+       }
+       
+       span{
+           color: crimson;
+           font-size: 2rem;
+       }
+       
+        
+
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('love.webp');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100vh; 
+            font-family: 'Crimson Text', serif;
+            color: white;
+            position: relative;
+         }  
+    </style>
+</head>
+
+<body>
+    <div class="text-center ">
+
+        <h1 text-center>The Love Calculator</h1>
+
+
+        <div class="mt-8">
+            <p text-center>To find out what the chances for you and your dream partner are, just fill in both <br> Names
+                ( Your Name and Love Name) in the two text boxes below, and Press Calculate.</p>
+        </div>
+    </div>
+
+    <header>
+
+        <div class="card w-50 m-auto text-center mt-4 container">
+            <div class="card-header text-center bg-danger">
+                Love Calculator
+            </div>
+            <div class="card-body">
+
+                <div class="form-group w-50 m-auto text-center">
+                    <input type="text" name="" class="form-control text-center" placeholder="Your Name" id="name">
+                </div>
+                <span class="mt-4">&#9829;</span>
+                <div class="form-group w-50 m-auto text-center">
+                    <input type="text" name="" class="form-control text-center" placeholder="Love Name" id="lname">
+                </div>
+                <br>
+                <div class="w-50 m-auto text-center w-50 m-auto text-center">
+                    <button class="btn  w-50" onclick="checkloveper()"> Calculate Love </button>
+                </div>
+                <br>
+                <div class="form-group w-80 m-auto text-center">
+                    <input type="text" name="" class="form-control text-center" placeholder="Percentage" id="lovevalue">
+                </div>
+                <br>
+                <div class="card-footer bg-danger">God Bless Your RelationShip</div>
+            </div>
+
+        </div>
+        </div>
+
+    </header>
+
+    <script>
+        function checkloveper(){
+       
+         var name = document.getElementById('name').value;
+         var lname = document.getElementById('lname').value;
+       
+         if(name == ""){
+          alert('Please enter your name');
+         }else if (name.length <=2 ) {
+          alert('Min lenght is 3')
+         }else if(!isNaN(name)){
+          alert('Numbers are not allowed');
+         }
+       
+         else if(lname == ""){
+          alert('Please enter your love name');
+         }else if (lname.length <=2 ) {
+          alert('Min lenght is 3')
+         }else if(!isNaN(lname)){
+          alert('Numbers are not allowed');
+         }
+         else{
+         var lovdata = Math.random() * 100;
+         lovdata = Math.floor(lovdata);
+         document.getElementById('lovevalue').value = lovdata + "%"; 
+         }
+         
+        }
+    </script>
+</body>
+
+</html>
